@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  launchd job TEMPLATE for scheduling this tool on an always-on Mac.
+
+  Fill in every __PLACEHOLDER__ when you instantiate:
+    __LABEL__        reverse-DNS label, e.g. com.andrew.toolname
+    __WRAPPER_PATH__ absolute path to launchd/toolname-run.sh in the clone
+    __HOME__         absolute home dir of the running user, e.g. /Users/you
+    __LOG_DIR__      absolute log dir, e.g. /Users/you/.claude/logs/toolname
+
+  Nothing here is real infrastructure — no secrets, no live paths committed.
+  Interval vs calendar: an interval job (below) needs no once-per-period guard —
+  launchd coalesces a StartInterval missed during sleep and fires once on wake.
+  Use StartCalendarInterval only with a wrapper-side "already ran this period"
+  guard (macOS drops calendar ticks across sleep/DarkWake).
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>__LABEL__</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>__WRAPPER_PATH__</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>HOME</key><string>__HOME__</string>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>TZ</key><string>America/New_York</string>
+  </dict>
+  <!-- Refresh every 3h (10800s). Adjust or switch to StartCalendarInterval. -->
+  <key>StartInterval</key><integer>10800</integer>
+  <key>RunAtLoad</key><true/>
+  <key>StandardOutPath</key><string>__LOG_DIR__/launchd.out.log</string>
+  <key>StandardErrorPath</key><string>__LOG_DIR__/launchd.err.log</string>
+  <key>ProcessType</key><string>Background</string>
+</dict>
+</plist>

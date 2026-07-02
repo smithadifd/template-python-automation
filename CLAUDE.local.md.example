@@ -1,0 +1,22 @@
+# <PROJECT> — Local Session State (gitignored)
+
+Rename to `CLAUDE.local.md` and use for per-machine notes, session-to-session
+state, and anything that doesn't belong in the committed AGENTS.md/CLAUDE.md.
+
+## Deployment / scheduling
+
+- Host: (e.g. always-on Mac Studio)
+- launchd label: `com.<you>.<project>` — plist + wrapper under `launchd/`
+- Log dir: `~/.claude/logs/<project>/`
+- Discord notify script: `~/.claude/scripts/discord-notify.sh` (failure-only)
+
+## Secrets (locations only — never values here)
+
+Config names the env var; the value lives out of band:
+
+- `TOOLNAME_TOKEN` — API token; sourced from `~/.claude/secrets/<project>.env`
+  (chmod 600) or 1Password via `op run` at wrapper start.
+
+## Session Log
+
+Record ongoing work here between sessions; trim to the last ~10 entries.

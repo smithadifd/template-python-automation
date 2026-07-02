@@ -1,0 +1,17 @@
+# config.example.yaml — the committed template. Copy to config.yaml (gitignored)
+# and fill in for your machine. NEVER put secret VALUES here or in config.yaml —
+# name the environment variable that holds the secret instead (see token_env),
+# and export the value out of band (1Password / ~/.claude/secrets/*.env).
+
+# Where the tool writes its output.
+output_dir: out
+
+# Name of the environment variable holding the API token. The code reads
+# os.environ[token_env] at runtime — the token value itself is never committed.
+token_env: TOOLNAME_TOKEN
+
+# Example work items the scaffold's `run` command plans over. Replace with your
+# tool's real configuration.
+items:
+  - alpha
+  - beta

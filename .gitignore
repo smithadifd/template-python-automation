@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Local config — config.example.yaml is the tracked template; config.yaml is
+# local + gitignored (never commit it; it can carry machine-specific paths).
+config.yaml
+
+# Secrets / env — never committed (values live in env / 1Password).
+.env
+.env.*
+
+# Portable-core: per-machine context + Claude machine overrides (never secrets).
+CLAUDE.local.md
+.claude/settings.local.json
+
+# macOS
+.DS_Store

@@ -1,0 +1,40 @@
+[project]
+# Rename to your tool's name when you instantiate the template. Keep it in sync
+# with the package directory (toolname/ below) and the [project.scripts] entry.
+name = "toolname"
+version = "0.0.1"
+description = "One-line description of what this automation does."
+requires-python = ">=3.13"
+# Runtime deps go here. Keep `import toolname` stdlib-only at module import time
+# (put third-party imports inside the functions that use them) so tests run with
+# no network and no extra installs — see AGENTS.md § Conventions.
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+# CI installs this group: `pip install -e .[dev]`.
+dev = [
+    "ruff>=0.6",
+    "pytest>=8.0",
+]
+
+[project.scripts]
+# `toolname` on the PATH -> toolname.cli:main. Rename the left side with the package.
+toolname = "toolname.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# Ship only the package dir; tests/ and launchd/ are not part of the wheel.
+# (Rename this to your package when you rename toolname/.)
+packages = ["toolname"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.ruff]
+# Match the donor's line length; ruff's defaults are otherwise sensible.
+line-length = 100
