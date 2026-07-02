@@ -12,6 +12,7 @@ output. This convention is stated in `--help` so it's discoverable.
 from __future__ import annotations
 
 import json
+import sys
 
 from .config import load_config
 from .core import plan_actions
@@ -38,7 +39,15 @@ def main(argv: "list[str] | None" = None) -> int:
     args = parser.parse_args(argv)
 
     if args.cmd == "run":
-        cfg = load_config(args.config)
+        try:
+            cfg = load_config(args.config)
+        except FileNotFoundError:
+            print(
+                f"config not found: {args.config}\n"
+                f"Copy the template and edit it:  cp config.example.yaml {args.config}",
+                file=sys.stderr,
+            )
+            return 1
         actions = plan_actions(cfg)
         dry = not args.apply
         result = {

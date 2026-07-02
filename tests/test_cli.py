@@ -49,3 +49,11 @@ def test_run_apply_marks_applied(capsys):
     out = json.loads(capsys.readouterr().out)
     assert out["dry_run"] is False
     assert out["applied"] == out["planned"]
+
+
+def test_run_missing_config_is_friendly(capsys, tmp_path):
+    rc = main(["run", "-c", str(tmp_path / "nope.yaml")])
+    assert rc == 1
+    err = capsys.readouterr().err
+    assert "config not found" in err
+    assert "config.example.yaml" in err
