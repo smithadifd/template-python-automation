@@ -18,7 +18,7 @@ from .config import load_config
 from .core import plan_actions
 
 
-def main(argv: "list[str] | None" = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     import argparse
 
     parser = argparse.ArgumentParser(

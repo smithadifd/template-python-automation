@@ -12,7 +12,6 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Optional
 
 
 @dataclass
@@ -30,12 +29,12 @@ class Config:
     # Arbitrary list of work items, just to show list parsing in the example.
     items: list[str] = field(default_factory=list)
 
-    def token(self) -> Optional[str]:
+    def token(self) -> str | None:
         """Resolve the secret from the environment. Returns None if unset."""
         return os.environ.get(self.token_env)
 
 
-def load_config(path: "str | Path" = "config.yaml") -> Config:
+def load_config(path: str | Path = "config.yaml") -> Config:
     """Parse a YAML config file into a `Config`. `yaml` is imported lazily so
     that merely importing this module stays stdlib-only and network-free."""
     import yaml  # lazy: keeps `import toolname` dependency-light
