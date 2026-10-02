@@ -13,13 +13,3 @@ locations, session log).
 
 - Run a fresh-eyes review (`reviewer` agent or `/review`) on the diff before
   declaring work done; apply mechanical fixes silently, surface real questions.
-- Doc updates (AGENTS.md, README) ship in the same PR as the code change.
-- `toolname run --apply` hits live state — be deliberate, never loop it; prefer
-  the dry-run default when verifying.
-- Conventional Commits; never auto-push; confirm before destructive ops.
-
-## End-of-session workflow
-
-- Feature branch → Conventional Commit → push → PR (`gh pr create`) → wait for CI
-  → squash-merge, delete branch → update `CLAUDE.local.md` session log (and
-  AGENTS.md if durable facts changed) in the same PR as the code.

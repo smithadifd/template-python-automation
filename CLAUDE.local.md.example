@@ -17,6 +17,14 @@ Config names the env var; the value lives out of band:
 - `TOOLNAME_TOKEN` — API token; sourced from `~/.claude/secrets/<project>.env`
   (chmod 600) or 1Password via `op run` at wrapper start.
 
+## End-of-session workflow
+
+- For a release: feature branch → Conventional Commit → push when requested →
+  PR (`gh pr create`) → wait for CI → squash-merge and delete the branch.
+- If work revealed durable repo facts, update `AGENTS.md` in the code PR before
+  merging. After release, update this local session log.
+- Never auto-push; confirm before destructive operations.
+
 ## Session Log
 
 Record ongoing work here between sessions; trim to the last ~10 entries.

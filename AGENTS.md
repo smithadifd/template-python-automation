@@ -85,6 +85,7 @@ config.example.yaml   committed config template (config.yaml is gitignored)
   hold the value. See standards/security.md.
 - Keep the pure/planning logic (core.py) separate from side effects (cli.py).
 - ruff for lint + format; Conventional Commits.
+- Ship documentation updates with the code changes they describe.
 
 ## 8. Critical gotchas
 
