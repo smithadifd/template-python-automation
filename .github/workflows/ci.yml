@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           # Pin the interpreter from the repo's .python-version.
           python-version-file: .python-version
