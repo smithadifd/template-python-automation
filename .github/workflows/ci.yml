@@ -9,8 +9,7 @@ on:
 
 jobs:
   ci:
-    # CI_RUNNER is a JSON label array overriding the self-hosted default, e.g. ["ubuntu-latest"] for public repos.
-    runs-on: ${{ fromJSON(vars.CI_RUNNER || '["self-hosted","linux"]') }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
 

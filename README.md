@@ -1,9 +1,7 @@
 # template-python-automation
 
-A GitHub **template** for Family 2 — Python automation / CLI — in Andrew's
-portfolio (foundry `standards/project-layout.md` §2, `ci.md` §2). It scaffolds a
-lint-and-test-green Python CLI with the conventions the portfolio standardizes
-on: pip/venv + `pyproject.toml`, ruff, pytest, a **dry-run-by-default / `--apply`
+A GitHub **template** for Python automation / CLI projects. It scaffolds a
+lint-and-test-green Python CLI with a standard set of conventions: pip/venv + `pyproject.toml`, ruff, pytest, a **dry-run-by-default / `--apply`
 to mutate** CLI, committed `config.example.yaml` → gitignored `config.yaml` with
 secrets via env only, a launchd plist + wrapper stub, and the portable-core
 context files (AGENTS.md + thin CLAUDE.md shim + CLAUDE.local.md.example).

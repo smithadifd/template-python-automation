@@ -4,7 +4,7 @@
   launchd job TEMPLATE for scheduling this tool on an always-on Mac.
 
   Fill in every __PLACEHOLDER__ when you instantiate:
-    __LABEL__        reverse-DNS label, e.g. com.andrew.toolname
+    __LABEL__        reverse-DNS label, e.g. com.example.toolname
     __WRAPPER_PATH__ absolute path to launchd/toolname-run.sh in the clone
     __HOME__         absolute home dir of the running user, e.g. /Users/you
     __LOG_DIR__      absolute log dir, e.g. /Users/you/.claude/logs/toolname
