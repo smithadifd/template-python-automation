@@ -5,6 +5,8 @@ this repo (Claude Code, Codex, Cursor, Aider, …). Self-contained: you can run,
 build, test, and navigate <PROJECT> from what's here. Human-facing overview is in
 [`README.md`](README.md).
 
+Release class: continuous
+
 > Claude Code users: `CLAUDE.md` imports this file and adds Claude-only notes.
 > Don't duplicate content from here into `CLAUDE.md`.
 >
