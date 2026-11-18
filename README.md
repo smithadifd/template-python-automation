@@ -6,6 +6,8 @@ to mutate** CLI, committed `config.example.yaml` → gitignored `config.yaml` wi
 secrets via env only, a launchd plist + wrapper stub, and the portable-core
 context files (AGENTS.md + thin CLAUDE.md shim + CLAUDE.local.md.example).
 
+Released continuously from `main`; there are no versioned releases.
+
 This is a scaffold, not a real tool: it ships one `run` subcommand and a handful
 of tests so CI passes out of the box. Replace the placeholder logic with yours.
 
