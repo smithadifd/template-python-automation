@@ -7,15 +7,15 @@ state, and anything that doesn't belong in the committed AGENTS.md/CLAUDE.md.
 
 - Host: (e.g. always-on Mac Studio)
 - launchd label: `com.<you>.<project>` — plist + wrapper under `launchd/`
-- Log dir: `~/.claude/logs/<project>/`
-- Discord notify script: `~/.claude/scripts/discord-notify.sh` (failure-only)
+- Log dir: `<log-directory>`
+- Notification script: `<path-to-notification-script>` (failure-only)
 
 ## Secrets (locations only — never values here)
 
 Config names the env var; the value lives out of band:
 
-- `TOOLNAME_TOKEN` — API token; sourced from `~/.claude/secrets/<project>.env`
-  (chmod 600) or 1Password via `op run` at wrapper start.
+- `TOOLNAME_TOKEN` — API token; supplied by your secret store as an environment
+  variable at wrapper start.
 
 ## End-of-session workflow
 
