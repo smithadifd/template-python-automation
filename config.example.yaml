@@ -1,7 +1,7 @@
 # config.example.yaml — the committed template. Copy to config.yaml (gitignored)
 # and fill in for your machine. NEVER put secret VALUES here or in config.yaml —
 # name the environment variable that holds the secret instead (see token_env),
-# and export the value out of band (1Password / ~/.claude/secrets/*.env).
+# and export the value out of band (from your secret store).
 
 # Where the tool writes its output.
 output_dir: out

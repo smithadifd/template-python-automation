@@ -11,5 +11,5 @@ locations, session log).
 
 ## Notes for Claude
 
-- Run a fresh-eyes review (`reviewer` agent or `/review`) on the diff before
-  declaring work done; apply mechanical fixes silently, surface real questions.
+- Run an independent review of the diff before declaring work done; apply
+  mechanical fixes silently, surface real questions.
